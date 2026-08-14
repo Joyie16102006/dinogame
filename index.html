@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Dino Run | Titan Arc Studios</title>
-  <meta name="description" content="Play Dino Run WebGL Game by Titan Arc Studios - Fast-paced prehistoric action runner.">
+  <title>DINO RUN | Titan Arc Studios</title>
+  <meta name="description" content="Play Dino Run by Titan Arc Studios - Fast-paced prehistoric action runner.">
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   
-  <!-- Performance Preload for Faster WebGL Game Loading -->
+  <!-- Preload tags for fast WebGL game startup -->
   <link rel="preload" href="Build/DinoRunWeb.loader.js" as="script">
   <link rel="preload" href="TemplateData/logo.png" as="image">
   
@@ -17,11 +17,11 @@
 <body>
   <div class="site-wrapper">
 
-    <!-- Top Header -->
+    <!-- Top Navigation Header -->
     <header class="site-header">
       <div class="container">
         <nav class="header-nav">
-          <a href="#" class="brand-logo" aria-label="Titan Arc Studios Home">
+          <a href="https://titanarcstudios.com/" class="brand-logo" aria-label="Titan Arc Studios Home">
             <img src="TemplateData/logo.png" alt="Titan Arc Studios Logo" class="brand-logo-img">
             <div class="brand-info">
               <span class="brand-name">TITAN ARC</span>
@@ -29,16 +29,15 @@
             </div>
           </a>
 
-          <div class="game-title-badge">
-            <span class="badge-text">Dino Run</span>
-            <span class="badge-tag">WebGL 3D</span>
-          </div>
+          <!-- Pure DINO RUN Title -->
+          <div class="header-game-title">DINO RUN</div>
 
           <div class="header-actions">
-            <button class="btn-secondary" id="btn-back-games" type="button">
+            <!-- Back to Games redirects directly to https://titanarcstudios.com/ -->
+            <a href="https://titanarcstudios.com/" class="btn-secondary">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               <span>Back to Games</span>
-            </button>
+            </a>
             <button class="btn-primary" id="btn-header-fullscreen" type="button">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
               <span>Fullscreen</span>
@@ -48,11 +47,9 @@
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Area -->
     <main class="main-content">
       <div class="container">
-
-        <!-- Game Stage Section -->
         <section class="game-stage-section">
           <div class="game-stage-card" id="unity-container">
             
@@ -62,7 +59,7 @@
               <!-- Unity WebGL Canvas -->
               <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
 
-              <!-- Light Custom Preloader Overlay -->
+              <!-- Light Preloader Loading Overlay -->
               <div class="loading-overlay" id="unity-loading-bar">
                 <img src="TemplateData/logo.png" alt="Titan Arc Studios Logo" class="loading-logo-img">
                 <h1 class="loading-title">DINO RUN</h1>
@@ -75,7 +72,7 @@
                 </div>
 
                 <div class="loading-status-group">
-                  <span class="loading-status-text" id="loading-status-text">Loading WebGL Engine...</span>
+                  <span class="loading-status-text" id="loading-status-text">Loading Engine...</span>
                   <span class="loading-percentage" id="loading-percentage-text">0%</span>
                 </div>
               </div>
@@ -84,7 +81,7 @@
               <div class="unity-warning-container" id="unity-warning"></div>
             </div>
 
-            <!-- Game Control Toolbar -->
+            <!-- Minimal Control Toolbar under Game Canvas -->
             <div class="game-control-bar" id="unity-footer">
               <div class="control-status">
                 <span class="status-dot"></span>
@@ -108,87 +105,34 @@
 
           </div>
         </section>
-
-        <!-- Information & Controls Grid -->
-        <section class="info-grid">
-          
-          <!-- Controls Guide Card -->
-          <article class="info-card">
-            <h2 class="card-title">How to Play</h2>
-            <div class="controls-list">
-              <div class="control-item">
-                <span class="control-label">Jump / Leap</span>
-                <div class="key-group">
-                  <span class="keycap">Space</span>
-                  <span style="color:var(--text-light);font-size:0.75rem">or</span>
-                  <span class="keycap">↑</span>
-                </div>
-              </div>
-              <div class="control-item">
-                <span class="control-label">Duck / Slide</span>
-                <div class="key-group">
-                  <span class="keycap">↓</span>
-                  <span style="color:var(--text-light);font-size:0.75rem">or</span>
-                  <span class="keycap">S</span>
-                </div>
-              </div>
-              <div class="control-item">
-                <span class="control-label">Pause Game</span>
-                <div class="key-group">
-                  <span class="keycap">Esc</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Game Overview Card -->
-          <article class="info-card">
-            <h2 class="card-title">Game Features</h2>
-            <ul class="feature-list">
-              <li class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Endless 3D prehistoric runner with dynamic hazards.</span>
-              </li>
-              <li class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>WebAssembly optimized graphics for desktop & mobile browsers.</span>
-              </li>
-            </ul>
-          </article>
-
-        </section>
       </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Clean Minimal Footer -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-brand">
-            <img src="TemplateData/logo.png" alt="Titan Arc Logo" class="footer-logo">
-            <span>© Titan Arc Studios. All rights reserved.</span>
-          </div>
-          <ul class="footer-links">
-            <li><a href="#" class="footer-link" id="footer-back-games">Back to Games</a></li>
-            <li><span class="badge-tag">WebGL 1.0</span></li>
-          </ul>
+          <img src="TemplateData/logo.png" alt="Titan Arc Logo" class="footer-logo">
+          <span>© Titan Arc Studios. All rights reserved.</span>
         </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- Back to Games Modal -->
-  <div class="modal-overlay" id="modal-back-games" aria-hidden="true">
-    <div class="modal-card">
-      <img src="TemplateData/logo.png" alt="Titan Arc Logo" class="modal-logo">
-      <h3 class="modal-title">Titan Arc Studios</h3>
-      <p class="modal-text">You are playing <strong>Dino Run</strong>! More Titan Arc Studios games will be available on the main studio hub soon.</p>
-      <button class="btn-primary" id="modal-close-btn" type="button" style="width:100%;justify-content:center">Continue Playing</button>
-    </div>
+  <!-- Mobile Landscape Orientation Overlay -->
+  <div class="rotate-overlay">
+    <svg class="rotate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="5" y="2" width="14" height="20" rx="2"/>
+      <path d="M12 18h.01"/>
+      <path d="M19 9l3 3-3 3"/>
+      <path d="M5 15l-3-3 3-3"/>
+    </svg>
+    <h2 class="rotate-title">Rotate Your Device</h2>
+    <p class="rotate-text">Please turn your device horizontally (landscape mode) to play Dino Run.</p>
   </div>
 
-  <!-- Unity WebGL Loader Script & Interface Logic -->
+  <!-- Unity WebGL Loader Script -->
   <script>
     (function() {
       var canvas = document.querySelector("#unity-canvas");
@@ -235,9 +179,9 @@
 
       function updateLoadingStage(pct) {
         if (pct < 25) {
-          statusText.textContent = "Loading WebGL Engine...";
+          statusText.textContent = "Loading Engine...";
         } else if (pct < 65) {
-          statusText.textContent = "Decompressing Game Assets...";
+          statusText.textContent = "Decompressing Assets...";
         } else if (pct < 90) {
           statusText.textContent = "Initializing WebAssembly...";
         } else {
@@ -294,24 +238,6 @@
 
       document.querySelector("#btn-reload-game").onclick = function() {
         window.location.reload();
-      };
-
-      var modal = document.querySelector("#modal-back-games");
-      var openModal = function(e) {
-        e.preventDefault();
-        modal.classList.add("active");
-        modal.setAttribute("aria-hidden", "false");
-      };
-      var closeModal = function() {
-        modal.classList.remove("active");
-        modal.setAttribute("aria-hidden", "true");
-      };
-
-      document.querySelector("#btn-back-games").onclick = openModal;
-      document.querySelector("#footer-back-games").onclick = openModal;
-      document.querySelector("#modal-close-btn").onclick = closeModal;
-      modal.onclick = function(e) {
-        if (e.target === modal) closeModal();
       };
     })();
   </script>

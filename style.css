@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Titan Arc Studios - Dino Run WebGL Game Page (Light Theme)
+   Titan Arc Studios - Dino Run WebGL Game Page (Clean Light Theme)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
@@ -14,10 +14,6 @@
 
   --primary-red: #e60039;
   --primary-red-hover: #cc0033;
-  --primary-red-light: rgba(230, 0, 57, 0.08);
-
-  --accent-blue: #2563eb;
-  --accent-blue-light: rgba(37, 99, 235, 0.08);
 
   --text-main: #0f172a;
   --text-muted: #475569;
@@ -30,11 +26,9 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
-  --radius-pill: 9999px;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
 }
 
 /* Reset & Global Base */
@@ -63,7 +57,7 @@ html, body {
 
 .container {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
@@ -73,7 +67,7 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -84,19 +78,19 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 64px;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: var(--text-main);
 }
 
 .brand-logo-img {
-  height: 40px;
+  height: 38px;
   width: auto;
   object-fit: contain;
 }
@@ -109,45 +103,28 @@ html, body {
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--text-main);
 }
 
 .brand-sub {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: var(--primary-red);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-.game-title-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-}
-
-.badge-text {
+/* Header Game Title - Pure DINO RUN Text */
+.header-game-title {
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 800;
+  font-size: 1.15rem;
   color: var(--text-main);
-}
-
-.badge-tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--primary-red);
-  background: var(--primary-red-light);
-  padding: 2px 8px;
-  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .header-actions {
@@ -194,6 +171,7 @@ html, body {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(230, 0, 57, 0.25);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -205,15 +183,10 @@ html, body {
 /* Main Content Area */
 .main-content {
   flex: 1;
-  padding: 2rem 0 3rem;
-}
-
-/* Game Stage Section */
-.game-stage-section {
+  padding: 1.5rem 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
+  justify-content: center;
 }
 
 .game-stage-card {
@@ -226,7 +199,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Aspect Ratio Canvas Wrapper */
+/* Canvas Wrapper */
 .canvas-wrapper {
   position: relative;
   width: 100%;
@@ -246,7 +219,7 @@ html, body {
   background: #000;
 }
 
-/* Loading Overlay (Light Modern Style) */
+/* Loading Overlay */
 .loading-overlay {
   position: absolute;
   top: 0;
@@ -271,7 +244,7 @@ html, body {
 }
 
 .loading-logo-img {
-  height: 64px;
+  height: 60px;
   width: auto;
   margin-bottom: 1.2rem;
   object-fit: contain;
@@ -280,7 +253,7 @@ html, body {
 
 @keyframes logoFloat {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
+  100% { transform: translateY(-5px); }
 }
 
 .loading-title {
@@ -302,7 +275,7 @@ html, body {
 
 .loading-bar-container {
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
   margin-bottom: 0.8rem;
 }
 
@@ -310,7 +283,7 @@ html, body {
   width: 100%;
   height: 8px;
   background: var(--bg-subtle);
-  border-radius: var(--radius-pill);
+  border-radius: 9999px;
   border: 1px solid var(--border-color);
   overflow: hidden;
 }
@@ -319,7 +292,7 @@ html, body {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--primary-red) 0%, #ff5277 100%);
-  border-radius: var(--radius-pill);
+  border-radius: 9999px;
   transition: width 0.2s ease-out;
 }
 
@@ -328,7 +301,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
   font-size: 0.82rem;
 }
 
@@ -343,7 +316,7 @@ html, body {
   color: var(--primary-red);
 }
 
-/* Warnings / Toasts */
+/* Warnings */
 .unity-warning-container {
   position: absolute;
   top: 16px;
@@ -377,7 +350,7 @@ html, body {
   color: #991b1b;
 }
 
-/* Controls Toolbar */
+/* Minimalist Control Toolbar under Canvas */
 .game-control-bar {
   display: flex;
   align-items: center;
@@ -435,194 +408,83 @@ html, body {
   height: 14px;
 }
 
-/* Info Cards (Clean & Minimal) */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-}
-
-.info-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.card-title {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 1rem;
-}
-
-.controls-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.control-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.control-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.control-label {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-.key-group {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.keycap {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-main);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  border-bottom: 2px solid #cbd5e1;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.feature-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-.feature-item svg {
-  width: 16px;
-  height: 16px;
-  color: var(--primary-red);
-  flex-shrink: 0;
-}
-
-/* Back to Games Modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s ease;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-card {
-  width: 100%;
-  max-width: 420px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.8rem;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-}
-
-.modal-logo {
-  height: 50px;
-  width: auto;
-  margin-bottom: 1rem;
-}
-
-.modal-title {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.modal-text {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-/* Footer */
+/* Minimal Site Footer */
 .site-footer {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-color);
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   margin-top: auto;
 }
 
 .footer-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .footer-logo {
-  height: 20px;
+  height: 22px;
   width: auto;
 }
 
-.footer-links {
-  display: flex;
+/* Mobile Landscape Orientation Overlay */
+.rotate-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 300;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  list-style: none;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
 }
 
-.footer-link {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  text-decoration: none;
+.rotate-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--primary-red);
+  margin-bottom: 1.2rem;
+  animation: rotatePhone 2.5s ease-in-out infinite;
 }
 
-.footer-link:hover {
+@keyframes rotatePhone {
+  0%, 10% { transform: rotate(0deg); }
+  45%, 65% { transform: rotate(-90deg); }
+  90%, 100% { transform: rotate(0deg); }
+}
+
+.rotate-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--text-main);
+  margin-bottom: 0.5rem;
 }
 
-/* CRITICAL FULLSCREEN FIX: HIDE ALL UI OPTIONS IN FULLSCREEN */
+.rotate-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 320px;
+  line-height: 1.4;
+}
+
+/* Show Rotate Prompt on Mobile in Portrait Mode */
+@media screen and (max-width: 896px) and (orientation: portrait) {
+  .rotate-overlay {
+    display: flex !important;
+  }
+}
+
+/* FULLSCREEN FIX: HIDE ALL WEBSITE ELEMENTS EXCEPT CANVAS */
 :fullscreen, :-webkit-full-screen {
   background: #000 !important;
 }
@@ -630,21 +492,17 @@ html, body {
 :fullscreen .site-header,
 :fullscreen .site-footer,
 :fullscreen .game-control-bar,
-:fullscreen .info-grid,
-:fullscreen .modal-overlay,
+:fullscreen .rotate-overlay,
 :-webkit-full-screen .site-header,
 :-webkit-full-screen .site-footer,
 :-webkit-full-screen .game-control-bar,
-:-webkit-full-screen .info-grid,
-:-webkit-full-screen .modal-overlay {
+:-webkit-full-screen .rotate-overlay {
   display: none !important;
 }
 
-:fullscreen .game-stage-section,
-:-webkit-full-screen .game-stage-section {
-  margin: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
+:fullscreen .main-content,
+:-webkit-full-screen .main-content {
+  padding: 0 !important;
 }
 
 :fullscreen .game-stage-card,
@@ -663,34 +521,25 @@ html, body {
   aspect-ratio: auto !important;
 }
 
-/* Mobile Responsive Optimizations */
+/* Mobile responsive navigation adjustments */
 @media (max-width: 768px) {
   .header-nav {
-    height: 60px;
+    height: 58px;
   }
 
-  .game-title-badge {
+  .brand-sub {
     display: none;
   }
 
-  .brand-name {
+  .header-game-title {
     font-size: 1rem;
+  }
+
+  .btn-secondary span {
+    display: inline;
   }
 
   .canvas-wrapper {
     aspect-ratio: 16 / 10;
-  }
-
-  .main-content {
-    padding: 1rem 0 2rem;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
   }
 }
