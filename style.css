@@ -350,36 +350,14 @@ html, body {
   color: #991b1b;
 }
 
-/* Minimalist Control Toolbar under Canvas */
+/* Control Toolbar - Fullscreen Only */
 .game-control-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 10px 18px;
   background: var(--bg-surface);
   border-top: 1px solid var(--border-color);
-}
-
-.control-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #16a34a;
-}
-
-.control-buttons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .ctrl-btn {
