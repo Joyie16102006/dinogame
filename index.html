@@ -5,50 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Dino Run | Titan Arc Studios</title>
-  <meta name="description" content="Play Dino Run - an action-packed WebGL game by Titan Arc Studios. Jump, duck, and survive in this high-octane prehistoric adventure!">
+  <meta name="description" content="Play Dino Run WebGL Game by Titan Arc Studios - Fast-paced prehistoric action runner.">
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  
+  <!-- Performance Preload for Faster WebGL Game Loading -->
+  <link rel="preload" href="Build/DinoRunWeb.loader.js" as="script">
+  <link rel="preload" href="TemplateData/logo.png" as="image">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="site-wrapper">
 
-    <!-- Top Navigation / Header -->
+    <!-- Top Header -->
     <header class="site-header">
       <div class="container">
         <nav class="header-nav">
-          <a href="#" class="brand-logo" aria-label="Titan Arc Studios">
-            <div class="brand-emblem">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="titanRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#ff4d6d" />
-                    <stop offset="50%" stop-color="#ff2a55" />
-                    <stop offset="100%" stop-color="#b30024" />
-                  </linearGradient>
-                </defs>
-                <path d="M 50,5 A 45,45 0 1,1 15,75 A 38,38 0 0,0 50,15 A 35,35 0 1,0 85,50 A 45,45 0 0,1 50,5 Z" fill="url(#titanRedGrad)" />
-                <path d="M 28,36 L 72,36 C 72,43 65,44 57,44 L 57,75 L 43,75 L 43,44 C 35,44 28,43 28,36 Z" fill="url(#titanRedGrad)" />
-              </svg>
-            </div>
+          <a href="#" class="brand-logo" aria-label="Titan Arc Studios Home">
+            <img src="TemplateData/logo.png" alt="Titan Arc Studios Logo" class="brand-logo-img">
             <div class="brand-info">
               <span class="brand-name">TITAN ARC</span>
               <span class="brand-sub">STUDIOS</span>
             </div>
           </a>
 
-          <div class="game-title-pill">
-            <span class="game-title-text">Dino Run</span>
+          <div class="game-title-badge">
+            <span class="badge-text">Dino Run</span>
             <span class="badge-tag">WebGL 3D</span>
           </div>
 
           <div class="header-actions">
             <button class="btn-secondary" id="btn-back-games" type="button">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               <span>Back to Games</span>
             </button>
-            <button class="btn-primary" id="btn-header-fullscreen" type="button" aria-label="Toggle Fullscreen">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-              <span>Play Fullscreen</span>
+            <button class="btn-primary" id="btn-header-fullscreen" type="button">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              <span>Fullscreen</span>
             </button>
           </div>
         </nav>
@@ -61,7 +54,7 @@
 
         <!-- Game Stage Section -->
         <section class="game-stage-section">
-          <div class="game-stage-container" id="unity-container">
+          <div class="game-stage-card" id="unity-container">
             
             <!-- Canvas Aspect Ratio Wrapper -->
             <div class="canvas-wrapper">
@@ -69,18 +62,11 @@
               <!-- Unity WebGL Canvas -->
               <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
 
-              <!-- Custom Titan Arc Loading Overlay -->
+              <!-- Light Custom Preloader Overlay -->
               <div class="loading-overlay" id="unity-loading-bar">
-                <div class="loading-brand">
-                  <div class="loading-logo-wrapper">
-                    <svg class="loading-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M 50,5 A 45,45 0 1,1 15,75 A 38,38 0 0,0 50,15 A 35,35 0 1,0 85,50 A 45,45 0 0,1 50,5 Z" fill="url(#titanRedGrad)" />
-                      <path d="M 28,36 L 72,36 C 72,43 65,44 57,44 L 57,75 L 43,75 L 43,44 C 35,44 28,43 28,36 Z" fill="url(#titanRedGrad)" />
-                    </svg>
-                  </div>
-                  <h1 class="loading-game-title">DINO RUN</h1>
-                  <span class="loading-studio-tag">Titan Arc Studios</span>
-                </div>
+                <img src="TemplateData/logo.png" alt="Titan Arc Studios Logo" class="loading-logo-img">
+                <h1 class="loading-title">DINO RUN</h1>
+                <span class="loading-subtitle">Titan Arc Studios</span>
 
                 <div class="loading-bar-container">
                   <div class="loading-bar-track">
@@ -89,7 +75,7 @@
                 </div>
 
                 <div class="loading-status-group">
-                  <span class="loading-status-text" id="loading-status-text">Preparing WebGL Engine...</span>
+                  <span class="loading-status-text" id="loading-status-text">Loading WebGL Engine...</span>
                   <span class="loading-percentage" id="loading-percentage-text">0%</span>
                 </div>
               </div>
@@ -128,18 +114,13 @@
           
           <!-- Controls Guide Card -->
           <article class="info-card">
-            <div class="card-header">
-              <div class="card-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m-2-2v4m10-2h.01m-3 0h.01"/></svg>
-              </div>
-              <h2 class="card-title">How to Play</h2>
-            </div>
+            <h2 class="card-title">How to Play</h2>
             <div class="controls-list">
               <div class="control-item">
                 <span class="control-label">Jump / Leap</span>
                 <div class="key-group">
                   <span class="keycap">Space</span>
-                  <span style="color:var(--text-dim);font-size:0.75rem">or</span>
+                  <span style="color:var(--text-light);font-size:0.75rem">or</span>
                   <span class="keycap">↑</span>
                 </div>
               </div>
@@ -147,20 +128,14 @@
                 <span class="control-label">Duck / Slide</span>
                 <div class="key-group">
                   <span class="keycap">↓</span>
-                  <span style="color:var(--text-dim);font-size:0.75rem">or</span>
+                  <span style="color:var(--text-light);font-size:0.75rem">or</span>
                   <span class="keycap">S</span>
                 </div>
               </div>
               <div class="control-item">
-                <span class="control-label">Pause / Menu</span>
+                <span class="control-label">Pause Game</span>
                 <div class="key-group">
                   <span class="keycap">Esc</span>
-                </div>
-              </div>
-              <div class="control-item">
-                <span class="control-label">Toggle Fullscreen</span>
-                <div class="key-group">
-                  <span class="keycap">F</span>
                 </div>
               </div>
             </div>
@@ -168,24 +143,15 @@
 
           <!-- Game Overview Card -->
           <article class="info-card">
-            <div class="card-header">
-              <div class="card-icon-box" style="background:rgba(0,240,255,0.12);border-color:rgba(0,240,255,0.25);color:var(--accent-cyan)">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h2 class="card-title">Dino Run Highlights</h2>
-            </div>
+            <h2 class="card-title">Game Features</h2>
             <ul class="feature-list">
               <li class="feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>High-speed endless dinosaur runner with dynamic obstacles.</span>
+                <span>Endless 3D prehistoric runner with dynamic hazards.</span>
               </li>
               <li class="feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Smooth WebGL & WebAssembly performance optimized for desktop & mobile browsers.</span>
-              </li>
-              <li class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Collect power-ups to boost your score and outrun extinction!</span>
+                <span>WebAssembly optimized graphics for desktop & mobile browsers.</span>
               </li>
             </ul>
           </article>
@@ -199,16 +165,12 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <div style="width:20px;height:20px;display:inline-block;vertical-align:middle">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 50,5 A 45,45 0 1,1 15,75 A 38,38 0 0,0 50,15 A 35,35 0 1,0 85,50 A 45,45 0 0,1 50,5 Z" fill="#ff2a55" />
-              </svg>
-            </div>
+            <img src="TemplateData/logo.png" alt="Titan Arc Logo" class="footer-logo">
             <span>© Titan Arc Studios. All rights reserved.</span>
           </div>
           <ul class="footer-links">
             <li><a href="#" class="footer-link" id="footer-back-games">Back to Games</a></li>
-            <li><span class="badge-tag" style="font-size:0.68rem">WebGL Build 1.0</span></li>
+            <li><span class="badge-tag">WebGL 1.0</span></li>
           </ul>
         </div>
       </div>
@@ -219,18 +181,14 @@
   <!-- Back to Games Modal -->
   <div class="modal-overlay" id="modal-back-games" aria-hidden="true">
     <div class="modal-card">
-      <div class="modal-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-      </div>
-      <h3 class="modal-title">Titan Arc Studios Games</h3>
-      <p class="modal-text">You are currently playing <strong>Dino Run</strong>! Additional Titan Arc Studios games will be available on the main studio hub soon.</p>
-      <div class="modal-actions">
-        <button class="btn-primary" id="modal-close-btn" type="button">Continue Playing</button>
-      </div>
+      <img src="TemplateData/logo.png" alt="Titan Arc Logo" class="modal-logo">
+      <h3 class="modal-title">Titan Arc Studios</h3>
+      <p class="modal-text">You are playing <strong>Dino Run</strong>! More Titan Arc Studios games will be available on the main studio hub soon.</p>
+      <button class="btn-primary" id="modal-close-btn" type="button" style="width:100%;justify-content:center">Continue Playing</button>
     </div>
   </div>
 
-  <!-- Unity Loader Script & Custom Wrapper Logic -->
+  <!-- Unity WebGL Loader Script & Interface Logic -->
   <script>
     (function() {
       var canvas = document.querySelector("#unity-canvas");
@@ -240,7 +198,6 @@
       var statusText = document.querySelector("#loading-status-text");
       var unityContainer = document.querySelector("#unity-container");
 
-      // Custom Banner Handler
       function unityShowBanner(msg, type) {
         var warningContainer = document.querySelector("#unity-warning");
         var div = document.createElement('div');
@@ -250,14 +207,11 @@
 
         if (type !== 'error') {
           setTimeout(function() {
-            if (div.parentNode) {
-              div.parentNode.removeChild(div);
-            }
-          }, 6000);
+            if (div.parentNode) div.parentNode.removeChild(div);
+          }, 5000);
         }
       }
 
-      // Preserved Unity Build Config
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/DinoRunWeb.loader.js";
       var config = {
@@ -272,7 +226,6 @@
         showBanner: unityShowBanner,
       };
 
-      // Responsive Mobile Viewport meta setup
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
         meta.name = 'viewport';
@@ -280,14 +233,11 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
-      var gUnityInstance = null;
-
-      // Status messages during progress
       function updateLoadingStage(pct) {
         if (pct < 25) {
-          statusText.textContent = "Loading WebGL engine...";
+          statusText.textContent = "Loading WebGL Engine...";
         } else if (pct < 65) {
-          statusText.textContent = "Decompressing game assets...";
+          statusText.textContent = "Decompressing Game Assets...";
         } else if (pct < 90) {
           statusText.textContent = "Initializing WebAssembly...";
         } else {
@@ -295,7 +245,6 @@
         }
       }
 
-      // Load Unity Script
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = function() {
@@ -305,12 +254,8 @@
           progressText.textContent = pct + "%";
           updateLoadingStage(pct);
         }).then(function(unityInstance) {
-          gUnityInstance = unityInstance;
-
-          // Smoothly hide loading overlay
           loadingOverlay.classList.add("hidden");
 
-          // Fullscreen triggers
           var toggleFullscreen = function() {
             if (!document.fullscreenElement && !document.webkitFullscreenElement) {
               if (unityContainer.requestFullscreen) {
@@ -332,12 +277,10 @@
           document.querySelector("#unity-fullscreen-button").onclick = toggleFullscreen;
           document.querySelector("#btn-header-fullscreen").onclick = toggleFullscreen;
 
-          // Focus Canvas helper
           document.querySelector("#btn-focus-canvas").onclick = function() {
             canvas.focus();
           };
 
-          // Auto-focus canvas on user click anywhere on stage
           canvas.addEventListener("click", function() {
             canvas.focus();
           });
@@ -349,12 +292,10 @@
 
       document.body.appendChild(script);
 
-      // Reload Button
       document.querySelector("#btn-reload-game").onclick = function() {
         window.location.reload();
       };
 
-      // Modal Handlers
       var modal = document.querySelector("#modal-back-games");
       var openModal = function(e) {
         e.preventDefault();
@@ -372,15 +313,6 @@
       modal.onclick = function(e) {
         if (e.target === modal) closeModal();
       };
-
-      // Keyboard Shortcut for Fullscreen (F key)
-      window.addEventListener("keydown", function(e) {
-        if (e.key === "f" || e.key === "F") {
-          if (document.activeElement !== canvas) {
-            document.querySelector("#btn-header-fullscreen").click();
-          }
-        }
-      });
     })();
   </script>
 </body>
